@@ -4,7 +4,7 @@ import { features, pricingOptions } from '../constants'
 
 const Pricing = () => {
     return (
-        <div className='mt-20'>
+        <div id='pricing' className='mt-20'>
             <h2 className='text-2xl sm:text-5xl lg:text-6xl text-center my-8 '> <span className='bg-gradient-to-r from-orange-700 to-red-900 text-transparent bg-clip-text'>Pricing </span> </h2>
             <div className='flex flex-wrap'>
                 {

@@ -24,7 +24,7 @@ const Navbar = () => {
         <ul className='hidden lg:flex ml-14px space-x-12'>
         {
          navItems.map((item, index)=>(
-            <li key={index} className='cu-p'>
+            <li key={index} className='cu-p active:text-orange-500'>
                 <a href={item.href}> {item.label}</a>
             </li>
          ))
@@ -48,7 +48,7 @@ const Navbar = () => {
             navItems.map((item, index)=>
                 (
                     <li key={index} className='py-4 cu-p'>
-                        <a className={item.href}>{item.label}</a>
+                        <a href={item.href}>{item.label}</a>
                     </li>
                 )
             )

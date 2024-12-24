@@ -3,7 +3,7 @@ import { testimonials } from '../constants'
 
 const Testimonial = () => {
     return (
-        <div className='mt-20 tracking-wide'>
+        <div id='testimonials' className='mt-20 tracking-wide'>
             <h2 className='text-2xl sm:text-5xl lg:text-5xl text-center my-10 lg:my-20'> What people are <span className='bg-gradient-to-r from-orange-700 to-red-900 text-transparent bg-clip-text'> saying  </span></h2>
 
             <div className='flex flex-wrap justify-center pl-10 pr-10 '>
