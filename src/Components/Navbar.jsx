@@ -3,13 +3,35 @@ import logo from "../assets/logo.png"
 import {navItems} from "../constants"
 import { Menu, X } from 'lucide-react'
 import { useState } from 'react'
+import SignInForm from './SignInForm'
+import CreateAccount from './CreateAccount'
 
 const Navbar = () => {
 
     const [mobileDrawerOpen, setMobileDrawerOpen]= useState(false)
+    const [sign, setSign] = useState(false)
+    const [isOpen, setIsOpen] = useState(false)
+    const [account, setAccount] = useState(false)
 
     const toggleNavbar =()=>{
         setMobileDrawerOpen(!mobileDrawerOpen)
+    }
+    const handleSignIn = ()=>{
+        if(sign){
+            setSign(false);
+        }else{
+            setSign(true)
+            setIsOpen(true)
+        }
+    }
+    const handleCreateAccount  = ()=>{
+        if(account){
+            setAccount(false)
+        }else{
+            setAccount(true)
+            setIsOpen(true)
+        }
+
     }
 
   return (
@@ -32,8 +54,10 @@ const Navbar = () => {
       
         </ul>
         <div className='hidden lg:flex justify-center space-x-12 items-center '>
-      <a href='#' className="py-2 px-3 border rounded-md">Sign In</a>
-      <a href='#' className="bg-gradient-to-r from-orange-500 to-orange-800 py-2 px-3 rounded-md"> Create an account</a>
+      <button className="py-2 px-3 border rounded-md" onClick={handleSignIn}>Sign In</button>
+      {/* <a href='#' className="py-2 px-3 border rounded-md">Sign In</a> */}
+      <button className="bg-gradient-to-r from-orange-500 to-orange-800 py-2 px-3 rounded-md" onClick={handleCreateAccount}> Create an account</button>
+      {/* <a href='#' className="bg-gradient-to-r from-orange-500 to-orange-800 py-2 px-3 rounded-md"> Create an account</a> */}
         </div>
         <div className='lg:hidden md:flex flex-col justify-end'>
             <button onClick={toggleNavbar}>{mobileDrawerOpen? <X/> : <Menu/>}</button>
@@ -55,12 +79,21 @@ const Navbar = () => {
         }
     </ul>
     <div className='flex space-x-6' >
-   <a href='#' className='py-2 px-3 border rounded-md'>Sign In</a>
-   <a href='#' className='py-2 px-3 rounded-md bg-gradient-to-r from-orange-500 to-orange-800'>Create an account</a>
+    <button
+     className='py-2 px-3 border rounded-md' onClick={handleSignIn} >Sign In</button>
+    <button className='py-2 px-3 rounded-md bg-gradient-to-r from-orange-500 to-orange-800' >Create an account</button>
+   {/* <a href='#' className='py-2 px-3 border rounded-md'>Sign In</a> */}
+   {/* <a href='#' className='py-2 px-3 rounded-md bg-gradient-to-r from-orange-500 to-orange-800'>Create an account</a> */}
     </div>
-
     </div>)}
     </nav>
+    {
+        sign && <SignInForm isOpen={isOpen} setIsopen={setIsOpen} sign={sign} setSign={setSign} />
+    }
+    {
+        account && <CreateAccount isOpen={isOpen} setIsopen={setIsOpen} setAccount={setAccount} />
+    }
+
     </>
 
   )
