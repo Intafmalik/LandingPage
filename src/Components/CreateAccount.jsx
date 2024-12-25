@@ -12,8 +12,6 @@ const CreateAccount = ({isOpen, setIsopen,setAccount}) => {
   return (
     <div className='fixed bg-black  bg-opacity-100 w-full h-full z-50'>
     <button className='text-2xl font-semibold absolute right-10 top-4' onClick={handleOpen}>X</button>
-    {/* <div className='flex items-center'> */}
-
         <div className='flex items-center justify-center w-full h-full mt-4 font-medium text-xl  p-2'>
         <div className='w-1/3 h-2/3 border border-orange-600 flex items-center flex-col gap-10 py-6'>
         <h2 className='text-2xl font-bold tracking-wide'>Create Account</h2>

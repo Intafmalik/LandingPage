@@ -13,8 +13,6 @@ const SignInForm = ({isOpen, setIsopen,setSign}) => {
   return (
     <div className='fixed bg-black w-full h-full z-50'>
     <button className='text-2xl font-semibold absolute right-10 top-4' onClick={handleOpen}>X</button>
-    {/* <div className='flex items-center'> */}
-
         <div className='flex items-center justify-center mt-20 font-medium text-xl p-2'><h2>Login</h2></div>
         <div className='flex items-center justify-center w-full mt-3 '>
         <div className='flex flex-col items-center  gap-5 bg-slate-100 w-1/4 p-2 h-max rounded-xl  p-2'>
